@@ -24,11 +24,11 @@ class Mrm_pid
 	float proportional; // Proportional component. A bigger error causes a bigger correction.
 	HardwareSerial * serial; //Additional serial port
 	
-	/** Print to all serial ports
-	@param message
-	@param eol - end of line
-	*/
-	void print(String message, bool eol = false);
+	// /** Print to all serial ports
+	// @param message
+	// @param eol - end of line
+	// */
+	// void print(String message, bool eol = false);
 
 public:
 	/** Constructor

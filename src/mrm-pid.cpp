@@ -30,11 +30,11 @@ float Mrm_pid::calculate(float valueNow, bool verbose, float limit) {
 	cumulativeValue += valueNow;
 	if (verbose) {
 #ifdef PrintSpeed
-		print(" Sp="+ (String)speed + "=(" + (String)valueNow + "-" + (String)lastValue + ")/" + (String)microsElapsed);
+		// print(" Sp="+ (String)speed + "=(" + (String)valueNow + "-" + (String)lastValue + ")/" + (String)microsElapsed);
 #endif
-		print(" Corr=" + (String)pidCorrection + "=" + (String)valueNow + "*" + (String)round(proportional));
+		// print(" Corr=" + (String)pidCorrection + "=" + (String)valueNow + "*" + (String)round(proportional));
 		if (derivative != 0) {
-			print("+" + (String)speed + "*" + (String)round(derivative));
+			;//print("+" + (String)speed + "*" + (String)round(derivative));
 		}
 	}
 	lastValue = valueNow;
@@ -45,19 +45,19 @@ float Mrm_pid::calculate(float valueNow, bool verbose, float limit) {
 	return pidCorrection;
 }
 
-/** Print to all serial ports
-@param message
-@param eol - end of line
-*/
-void Mrm_pid::print(String message, bool eol) {
-	if (eol) {
-		Serial.println(message);
-		if (serial != 0)
-			serial->println(message);
-	}
-	else {
-		Serial.print(message);
-		if (serial != 0)
-			serial->print(message);
-	}
-}
+// /** Print to all serial ports
+// @param message
+// @param eol - end of line
+// */
+// void Mrm_pid::print(String message, bool eol) {
+// 	if (eol) {
+// 		Serial.println(message);
+// 		if (serial != 0)
+// 			serial->println(message);
+// 	}
+// 	else {
+// 		Serial.print(message);
+// 		if (serial != 0)
+// 			serial->print(message);
+// 	}
+// }
